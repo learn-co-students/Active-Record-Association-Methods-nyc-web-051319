@@ -7,11 +7,11 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    a = Artist.find_by(:name => "Drake") # finds all instances of Artists with a name of Drake
-    if a # if found...
-      self.artist = a # set song instance's artist equal to that artist instance found
-    else # if not found...
-      self.artist = Artist.new(:name => "Drake") # set song instance's artist equal to a new instance of an artist w/ name Drake
+    a = Artist.find_by(:name => "Drake") # find all artist instances with name as Drake
+    if a # if found ...
+      self.artist = a # set song instance's artist as that artist instance
+    else # if not found ...
+      self.artist = Artist.new(:name => "Drake") # set song instance's artist as a new Artist instance w/ name as Drake
     end
   end
 
